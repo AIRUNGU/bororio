@@ -1,0 +1,166 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/app.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/animate.css' %}">
+	<script type="text/javascript" src="{%static 'js/jquery-3.3.1.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="">
+
+	
+</head>
+<body>
+	<header>
+		<a href="#" class="navbar-brand"><img src="{%static 'img/icon.jpg' %}" class="img-circle"></a><br>
+		<h1>BORORIO AFRICA ADVENTURES</h1>
+	</header>
+<!-- NAVIGATION -->
+<div class="minicontact" id="minicontact"></div>
+<div id="mainnavigation" class="navbar navbar-default  mainnavigation" role="navigation">
+	<div class="handle">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+	</div>
+	<div class="container">
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li ><a href="{% url 'home' %}">HOME</a></li>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">OUR SERVICES<span class="caret"></span> </a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Flight Tours</a></li>
+						<li><a href="#">New scene Guide</a></li>
+						<li><a href="#">Security Plans</a></li>
+						<li><a href="#">Overnight Accomondation</a></li>
+					</ul>
+				</li>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">TOP SAFARIS<span class="caret"></span> </a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Nairobi</a></li>
+						<li><a href="#">Kitui</a></li>
+					</ul>
+				</li>
+				<li><a href="#">ENQUIRES</a></li>
+				<li><a href="{% url 'about' %}">ABOUT US</a></li>
+				<li><a href="#">INFORMATION</a></li>
+				<li><a href="#">CONTACT US</a></li>
+				{% if user.is_staff %}
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">STAFF<span class="caret"></span> </a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Flight Tours</a></li>
+						<li><a href="#">New scene Guide</a></li>
+						<li><a href="#">Security Plans</a></li>
+						<li><a href="#">Overnight Accomondation</a></li>
+					</ul>
+				</li>
+				{% endif %}
+				{% if user.is_superuser %}
+				<li><a href="/admin">MANAGE</a></li>
+				{% endif %}
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-list" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="fa fa-power-off" aria-hidden="true"></i> Signout</a></li>
+						<li><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	<!-- END -->
+<!-- div container -->
+	{% block content %}
+	{% endblock %}
+<!-- Contact us -->
+<div class="contact" id="contact">
+	<div class="container">
+		<div class="row">
+			<h2>Contact us</h2>
+			<p>This will speed up your building process, but you should always test your app on native
+			emulators and devices. Type the following code to serve your app on the web browser </p>
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="input-group input-group-lg wow fadeInUp" data-wow-delay='0.2s'>
+					<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+					<input type="text" name="" class="form-control" aria-describedby="sizing-addon1" placeholder="Full Name">
+				</div>
+				<div class="input-group input-group-lg wow fadeInUp" data-wow-delay='0.6s'>
+					<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+					<input type="text" name="" class="form-control" aria-describedby="sizing-addon1" placeholder="Email Address">
+				</div>
+				<div class="input-group input-group-lg wow fadeInUp" data-wow-delay='0.8s'>
+					<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
+					<input type="text" name="" class="form-control" aria-describedby="sizing-addon1" placeholder="Phone">
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="input-group wow fadeInUp" data-wow-delay='0.9s'>
+					<textarea class="form-control" id="" cols="80" rows="6"></textarea>
+				</div>
+				<button class="btn btn-success btn-lg wow fadeInUp" data-wow-delay='2s'>Submit your message</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end -->
+<!-- FOOTER -->
+<div class="footer" id="footer">
+	<div class="container" >
+		<div class="row">
+			<h2>BORORIO AFRICA ADVENTURES</h2>
+			<p>This is a system that is a friend</p>
+			<div class="col-lg-4 col-md-4 col-md-12 wow flipInY" data-wow-delay='0.2s'>
+				<div class="blockss">
+					<h4>PARTNERS</h4>
+					<h1>WILDLIFE DEPARTMENT</h1>
+					<img src="{%static 'img/slide4.jpg' %}" height="190" width="200">
+					<p>This will speed up your building process</p>
+					<hr>
+					<li>100 users</li>
+					<li>Usl member</li>
+					<li>Online supp0rt</li>
+					
+			
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-md-12 wow flipInY" data-wow-delay='0.3s'>
+		
+			</div>
+
+<div class="team" id="team">
+	<div class="container">
+		<div class="row">
+			<h2>Find us through</h2>
+			<div class="col-lg-4 col-md-4 col-sm-12 wow fadeInLeft" data-wow-delay='1.4s'>
+				<p>Embrassing power of spatial objects</p>
+				<a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--END OF TEAM-->
+		</div>
+	</div>
+</div>
+<!-- ENDFOOTER -->
+<!-- <script type="text/javascript" src="app.js"></script> -->
+<script type="text/javascript" src="{%static 'js/jquery-3.3.1.min.js' %}"></script>
+<script type="text/javascript" src="{%static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{%static  'js/wow.min.js' %}"></script>
+
+<script type="text/javascript">
+	new WOW().init();
+</script>
+</body>
+</html>
